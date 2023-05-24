@@ -50,10 +50,16 @@ export default{
 <Main/>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&display=swap');
+  font-family: 'Kanit', sans-serif;
+}
+
+body{
+  background-color: rgb(20, 20, 20);
 }
 </style>
