@@ -67,8 +67,8 @@ export default{
 <style scoped lang="scss">
 h2{
   color: white;
-  font-size: 50px;
-  margin: 70px 0px 20px 25px;
+  font-size: 40px;
+  margin: 100px 0px 20px 25px;
 }
 
 .divider{

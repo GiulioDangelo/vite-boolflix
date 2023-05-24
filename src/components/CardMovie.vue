@@ -75,7 +75,7 @@ export default{
 <style scoped lang="scss">
 h2{
   color: white;
-  font-size: 50px;
+  font-size: 35px;
   margin: 10px 0px 20px 25px;
 }
 
