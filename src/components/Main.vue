@@ -1,15 +1,20 @@
 <script>
-import Card from '../components/Card.vue'
+import CardMovie from './CardMovie.vue';
+import CardSeries from './CardSeries.vue'
+
 export default{
   components:{
-    Card,
+    CardMovie,
+    CardSeries,
   }
 }
 </script>
 
 <template>
-<Card/>
+<CardMovie/>
+<CardSeries/>
 </template>
+
 
 <style scoped lang="scss">
 </style>

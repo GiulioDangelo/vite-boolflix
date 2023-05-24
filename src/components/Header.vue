@@ -13,7 +13,7 @@ export default{
     <div class="nav">
         <h1>BOOLFIX</h1>
         <div>
-            <input type="text" v-model="store.inputText">
+            <input type="text" v-model="store.inputText" @keyup.enter="this.$emit('search')">
             <button @click="this.$emit('search')">search</button>
         </div>
     </div>
