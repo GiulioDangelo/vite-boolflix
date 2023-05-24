@@ -28,8 +28,15 @@ export default{
       <div>{{ film.original_language }}</div>
 
       <div class="rating">
-        <span v-for="star in Math.ceil(film.vote_average / 2)"> ⭐</span>
+        <span v-for="star in Math.ceil(film.vote_average / 2)"> 
+          <font-awesome-icon :icon="['fas', 'star']" style="color: #ffd500;" />
+        </span>
+        
+        <span v-for="star in Math.floor(5 - film.vote_average / 2)">
+              <font-awesome-icon :icon="['fas', 'star']" />
+          </span>
       </div>
+
 
       <img :src="'http://image.tmdb.org/t/p/w300/' + film.poster_path">
     </div>

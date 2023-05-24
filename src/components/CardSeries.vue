@@ -18,10 +18,16 @@ export default{
       <div>{{ serie.original_language }}</div>
 
       <div class="rating">
-        <span v-for="star in Math.ceil(serie.vote_average / 2)"> ⭐</span>
+        <span v-for="star in Math.ceil(serie.vote_average / 2)">
+            <font-awesome-icon :icon="['fas', 'star']" style="color: #ffd500;" />
+        </span>
+
+        <span v-for="star in Math.floor(5 - serie.vote_average / 2)">
+            <font-awesome-icon :icon="['fas', 'star']" />
+        </span>
       </div>
 
-      <img :src="'http://image.tmdb.org/t/p/w300/' + serie.poster_path">
+      <img :src="'http://image.tmdb.org/t/p/w342/' + serie.poster_path">
     </div>
   </div>
 </template>
