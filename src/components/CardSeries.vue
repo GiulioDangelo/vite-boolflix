@@ -1,5 +1,6 @@
 <script>
 import { store } from '../../store'
+import LangFlag from 'vue-lang-code-flags';
 
 export default{
     data() {
@@ -7,6 +8,10 @@ export default{
             store,
         }
     },
+
+    components: {
+    LangFlag,
+  },
 }
 </script>
 
@@ -22,7 +27,9 @@ export default{
     <div v-for="serie in store.seriesList" class="card">
 
       <div class="face front">
-        <img :src="'http://image.tmdb.org/t/p/w342/' + serie.poster_path">
+        <img v-if="serie.poster_path" :src="'http://image.tmdb.org/t/p/w342/' + serie.poster_path">
+
+        <img v-else src="https://i.ebayimg.com/images/g/e-MAAOSwDsdhvc7l/s-l1600.jpg" class="placeholder">
       </div>
 
       <div class="face back">
@@ -38,7 +45,7 @@ export default{
 
         <div>
           <h3>Lingua originale:</h3>
-          {{ serie.original_language }}
+          <lang-flag :iso="serie.original_language"/>
         </div>
 
         <div>

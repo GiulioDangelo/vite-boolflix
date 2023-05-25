@@ -51,7 +51,7 @@ export default{
 
         <div>
           <h3>Lingua originale:</h3>
-          {{ film.original_language }}
+          <lang-flag :iso="film.original_language"/>
         </div>
 
         <div>
