@@ -31,8 +31,11 @@ export default{
     <div v-for="film in store.filmList" class="card">
 
       <div class="face front">
-        <img :src="'http://image.tmdb.org/t/p/w300/' + film.poster_path">
+        <img v-if="film.poster_path" :src="'http://image.tmdb.org/t/p/w342/' + film.poster_path">
+
+        <img v-else src="https://i.ebayimg.com/images/g/e-MAAOSwDsdhvc7l/s-l1600.jpg" class="placeholder">
       </div>
+
 
       <div class="face back">
 
@@ -120,7 +123,7 @@ h2{
         img{
           height: 100%;
           position: absolute;
-          object-fit: contain;
+          object-fit: none;
         }
     }
 }
@@ -133,11 +136,20 @@ h2{
         background: rgb(0, 0, 0);
         padding: 15px;
         text-align: center;
+        overflow-y: auto;
 
           div{
             margin-top: 15px;
           }
     }
+
+    .back::-webkit-scrollbar{
+   background: rgb(59, 59, 59);
+}
+
+.back::-webkit-scrollbar-thumb{
+   background: rgb(255, 0, 0);
+}
 
 .card:hover .front {
     transform: perspective(600px) rotateY(180deg);

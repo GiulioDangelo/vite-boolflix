@@ -113,7 +113,7 @@ h2{
         img{
           height: 100%;
           position: absolute;
-          object-fit: contain;
+          object-fit: none;
         }
     }
 }
@@ -127,11 +127,19 @@ h2{
         background: rgb(0, 0, 0);
         padding: 15px;
         text-align: center;
-
+        overflow-y: auto;
         div{
             margin-top: 15px;
           }
     }
+
+.back::-webkit-scrollbar{
+   background: rgb(59, 59, 59);
+}
+
+.back::-webkit-scrollbar-thumb{
+   background: rgb(255, 0, 0);
+}
 
 .card:hover .front {
     transform: perspective(600px) rotateY(180deg);
