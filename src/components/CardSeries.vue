@@ -110,9 +110,6 @@ h2{
   margin: 10px;
   margin-top: 20px;
   text-align: center;
-  border: 1px solid rgb(255, 255, 255);
-  border-radius: 10px;
-  overflow: hidden;
 
     .front{
       transform: perspective(600px) rotateY(0deg);
@@ -121,6 +118,8 @@ h2{
           height: 100%;
           position: absolute;
           object-fit: none;
+          border: 1px solid rgb(255, 255, 255);
+          border-radius: 10px;
         }
     }
 }
@@ -135,6 +134,8 @@ h2{
         padding: 15px;
         text-align: center;
         overflow-y: auto;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 10px;
         div{
             margin-top: 15px;
           }

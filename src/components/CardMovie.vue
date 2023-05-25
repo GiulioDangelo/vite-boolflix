@@ -143,7 +143,7 @@ h2{
           }
     }
 
-    .back::-webkit-scrollbar{
+  .back::-webkit-scrollbar{
    background: rgb(59, 59, 59);
 }
 
