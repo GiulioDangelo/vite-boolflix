@@ -2,24 +2,24 @@
 import { stringifyExpression } from '@vue/compiler-core';
 import axios from 'axios';
 import { store } from '../../store'
+
 export default{
   data() {
     return {
       store,
     }
-  },
+  }
 
-  created() {
-    axios.get(`"https://api.themoviedb.org/3/movie/${this.store.filmList.results.id'/'}credits"`,
-        {
-          params: {
-            api_key: 'd7e2fe710e865fed3df9a182fa17dee7',
-            language:'en',
-            query
-          }
-        })
-        .then(response => (this.store.cast = response.data.cast));
-  },
+//   created() {
+//     // console.log(this.store.filmList.results.id); 
+//     axios.get(`https://api.themoviedb.org/3/movie/${this.store.filmList.id}/credits`,
+//         {
+//           params: {
+//             api_key: 'd7e2fe710e865fed3df9a182fa17dee7',
+//           }
+//         })
+//         .then(response => (this.store.cast = response.data.cast));
+  // },
 }
 
 </script>
@@ -33,7 +33,7 @@ export default{
   <div class="container">
 
 
-    <!-- <div>{{ this.store.cast }}</div> -->
+    <!-- <div>{{ this.store.castFilm}}</div> -->
 
 
     <div v-for="film in store.filmList" class="card">
