@@ -1,19 +1,10 @@
 <script>
+import { stringifyExpression } from '@vue/compiler-core';
 import { store } from '../../store'
 export default{
   data() {
     return {
       store,
-    }
-  },
-
-  methods: {
-    numToStar(){
-      star=Math.round(film.vote_average / 2);
-
-      for (let i = star; i < star; i++) {
-        
-      }
     }
   },
 }

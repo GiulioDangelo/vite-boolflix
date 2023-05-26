@@ -32,6 +32,18 @@ export default{
         })
         .then(response => (this.store.seriesList = response.data.results));
 
+
+        axios.get('https://api.themoviedb.org/3/movie/credits?language=en',
+        {
+          params: {
+            api_key: 'd7e2fe710e865fed3df9a182fa17dee7',
+            movie_id: 385687,
+            // id:385687,
+          }
+        })
+        .then(response => (this.store.cast = response.data.cast));
+
+        
     },
   },
 
