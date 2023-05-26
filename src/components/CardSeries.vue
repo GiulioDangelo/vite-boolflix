@@ -136,6 +136,7 @@ h2{
         overflow-y: auto;
         border: 1px solid rgb(255, 255, 255);
         border-radius: 10px;
+        
         div{
             margin-top: 15px;
           }
