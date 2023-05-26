@@ -38,6 +38,7 @@ export default{
           params: {
             api_key: 'd7e2fe710e865fed3df9a182fa17dee7',
             movie_id: 385687,
+            // movie_id: store.filmList.results.id ,
             // id:385687,
           }
         })
