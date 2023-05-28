@@ -59,8 +59,8 @@ export default{
 
     <!-- <div>{{ this.store.castFilm}}</div> -->
 
-
-    <div v-for="film in store.filmList" class="card">
+<!-- FIXME: -->
+    <div v-for="film in store.filmList" class="card"> 
 
       <div class="face front">
         <img v-if="film.poster_path" :src="'http://image.tmdb.org/t/p/w342/' + film.poster_path">
