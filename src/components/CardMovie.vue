@@ -1,5 +1,5 @@
 <script>
-import { stringifyExpression } from '@vue/compiler-core';
+import LangFlag from 'vue-lang-code-flags';
 import axios from 'axios';
 import { store } from '../../store'
 
@@ -7,8 +7,32 @@ export default{
   data() {
     return {
       store,
+      castFilm: [],
     }
-  }
+  },
+
+  methods: {
+    getFilmListCasts(idMovie) {
+        axios
+          .get(
+            `https://api.themoviedb.org/3/movie/${idMovie}/credits`,
+            {
+              params: {
+                api_key: "d7e2fe710e865fed3df9a182fa17dee7",
+              },
+            },
+          )
+          .then(
+            (response) => {
+              const tempFilm = response.data.cast.slice(0, 5);
+
+              this.castFilm = tempFilm
+
+            }
+          );
+    },
+  },
+
 
 //   created() {
 //     // console.log(this.store.filmList.results.id); 
@@ -76,6 +100,15 @@ export default{
                 <font-awesome-icon :icon="['fas', 'star']" />
             </span>
         </div>
+
+        <button @click="this.getFilmListCasts(film.id)">CAST</button>
+
+        <ul style="list-style: none" class="cast">
+        <li v-for="cast in castFilm">
+          {{ cast.name }} IN
+          <span style="color: rgba(255, 0, 0, 0.5)">{{ cast.character }}</span>
+        </li>
+      </ul>
       </div>
 
     </div>

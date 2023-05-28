@@ -1,17 +1,43 @@
 <script>
 import { store } from '../../store'
 import LangFlag from 'vue-lang-code-flags';
+import axios from 'axios';
+
 
 export default{
     data() {
         return {
             store,
+            castSeries: [],
         }
     },
 
     components: {
     LangFlag,
   },
+
+methods: {
+  getSeriesListCasts(idSeries) {
+      axios
+        .get(
+          `https://api.themoviedb.org/3/movie/${idSeries}/credits`,
+          {
+            params: {
+              api_key: "d7e2fe710e865fed3df9a182fa17dee7",
+            },
+          },
+        )
+        .then(
+          (response) => {
+            const tempSeries = response.data.cast.slice(0, 5);
+
+            this.castSeries = tempSeries
+
+          }
+        );
+  },
+}
+
 }
 </script>
 
@@ -63,9 +89,17 @@ export default{
               <font-awesome-icon :icon="['fas', 'star']" />
           </span>
         </div>
-      </div>
 
-      
+        <button @click="this.getSeriesListCasts(serie.id)">CAST</button>
+
+        <ul style="list-style: none" class="cast">
+          <li v-for="cast in castSeries">
+            {{ cast.name }} IN
+            <span style="color: rgba(255, 0, 0, 0.5)">{{ cast.character }}</span>
+          </li>
+        </ul>
+
+      </div>
     </div>
   </div>
 </template>
